@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+{% if title %}
+<title>IMS.{{ title }}</title>
+{% else %}
+<title> IMS </title>
+{% endif %}
+    
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+
+    <nav class="navbar navbar-expand-lg bg-body-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'index' %}">Home</a>
+          <a class="navbar-brand" href="{% url 'index' %}">Home</a>
+          <a class="navbar-brand" href="{% url 'index' %}">Home</a>
+          <a class="navbar-brand" href="{% url 'index' %}">Home</a>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <div class="container fluid">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10 col-sm-12 col-xm-12">
+                    {% block content %}
+
+                    {% endblock content %}
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+      </main>
 </body>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 </html>
